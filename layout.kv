@@ -1,0 +1,65 @@
+# layout.kv
+
+<MainLayout>:
+    orientation: 'vertical'
+
+    # Header section with 10% height
+    BoxLayout:
+        size_hint_y: 0.1  # 10% of total height
+        canvas.before:
+            Color:
+                rgba: 1, 0, 0, 1  # Red
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            text: "Header Bar"
+            font_size: 20
+            halign: 'center'
+            valign: 'middle'
+
+    # Timer section with 40% height
+    BoxLayout:
+        size_hint_y: 0.4  # 40% of total height
+        canvas.before:
+            Color:
+                rgba: 0, 1, 0, 1  # Green
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            text: "Timer Display"
+            font_size: 40
+            halign: 'center'
+            valign: 'middle'
+
+    # Bottom section, split 50% each vertically
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 0.5  # Remaining 50% of total height
+
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 1, 1  # Blue
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: "Bottom Section 1"
+                font_size: 20
+                halign: 'center'
+                valign: 'middle'
+
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: 1, 0.75, 0.8, 1   # Yellow
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: "Bottom Section 2"
+                font_size: 20
+                halign: 'center'
+                valign: 'middle'
